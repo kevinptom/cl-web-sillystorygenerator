@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Silly Story Generator</title>
+    <style>
+      /* Import a nice, rounded font from Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+      body {
+        font-family: 'Nunito', sans-serif;
+        /* A fun, bright gradient background */
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      /* The main white card holding everything */
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 0;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      /* Styled text input */
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e1e1e1;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #ff6b6b; /* Highlights red when clicking inside */
+      }
+
+      /* Styled radio buttons area */
+      .radio-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background: #f8f9fa;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: 1px solid #e1e1e1;
+      }
+
+      .radio-group label {
+        display: inline;
+        margin-bottom: 0;
+        cursor: pointer;
+        font-weight: normal;
+      }
+
+      .radio-group input[type="radio"] {
+        margin-right: 5px;
+        accent-color: #ff6b6b; /* Colors the radio dot red */
+      }
+
+      /* Big, colorful generate button */
+      button.randomize {
+        width: 100%;
+        padding: 14px;
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+        font-family: inherit;
+        box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
+      }
+
+      button.randomize:hover {
+        background-color: #ff5252;
+      }
+
+      button.randomize:active {
+        transform: scale(0.98); /* Gives a clicking "press" effect */
+        box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+      }
+
+      /* The generated story text box */
+      p.story {
+        background: #fff3cd;
+        color: #856404;
+        padding: 20px;
+        border-radius: 8px;
+        line-height: 1.6;
+        visibility: hidden; 
+        margin-bottom: 0;
+        margin-top: 25px;
+        border-left: 5px solid #ffeeba;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🤪 Silly Story Generator</h1>
+      
+      <div class="form-group">
+        <label for="customname">Enter custom name:</label>
+        <input id="customname" type="text" placeholder="e.g., Bob" />
+      </div>
+      
+      <div class="form-group radio-group">
+        <input id="us" type="radio" name="ukus" value="us" checked />
+        <label for="us">US</label>
+        
+        <input id="uk" type="radio" name="ukus" value="uk" />
+        <label for="uk">UK</label>
+      </div>
+      
+      <div class="form-group">
+        <button class="randomize">Generate random story</button>
+      </div>
+      
+      <p class="story"></p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
